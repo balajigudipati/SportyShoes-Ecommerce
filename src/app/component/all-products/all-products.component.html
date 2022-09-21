@@ -1,0 +1,42 @@
+
+
+<ng-container>
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Product Image</th>
+            <th>Product Description</th>
+            <th>Product Id</th>
+            <th>Product Category</th>
+            <th>Product Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+<tbody>
+    <tr *ngFor="let item of productList; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{item.productName}}</td>
+        <td><img style="width: 120px;" src="data:image/jpeg;base64,{{item.picByte}}" alt=""></td>
+         <td style="width: 25%;">{{item.productDescription}}</td>
+         <td style="width: 12%;">{{item.productId}}</td>
+         <td style="width: 12%;">{{item.productCategory}}</td>                   
+         <td style="width: 12%;">{{item.productPrice}}</td>
+                           
+        <td>
+            <button (click)="updateItem(item.id)" class="btn btn-info"><i class="fas fa-edit"></i></button>&nbsp; 
+            <button (click)="removeItem(item.id)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+            
+        </td>
+    </tr>
+</tbody>
+
+</table>
+        </div>
+        </div>
+</div>
+</ng-container>

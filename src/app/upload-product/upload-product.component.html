@@ -1,0 +1,59 @@
+<p>upload-product works!</p>
+<h2>Welcome To E-COMMERCE SHOP</h2>
+
+  
+
+  <div class="container">
+    <h2>Add New Product</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+      <label>Product Name<span class="text-danger">*</span></label>
+      <input type="text" class="form-control" placeholder="Product Name" formControlName="productName" name="productName" ngModel>
+      
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+      <label>ProductID </label>
+      <input type="text" class="form-control" placeholder="ProductId" formControlName="productId" name="productId" ngModel>
+    </div>
+
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+        <label>Product Description</label>
+        <input type="text" class="form-control" placeholder="Description" formControlName="productDescription" name="productDescription" ngModel>
+      </div>
+
+      <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+        <label>Price</label>
+        <input type="number" class="form-control" placeholder="Price" formControlName="productPrice" name="productPrice" ngModel>
+      </div>
+
+      <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+        <label id="category">Category</label>
+         <select class="form-control select"  for="category" placeholder="product category" formControlName="productCategory" name="productCategory" ngModel>
+          <option value="running shoes">Running Shoes</option>
+          <option value="training shoes">training shoes</option>
+          <option value="football shoes">football shoes</option>
+          <option value="trekking&hiking">trekking&hiking</option>
+          <option value="walking shoes">walking shoes</option>
+          <option value="sneakers">sneakers shoes</option>
+          <option value="outdoor">outdoor shoes</option>
+          <option value="skateboarding">skateboarding</option>
+          <option value="basketball">basketball</option>
+          <option value="tennis">tennis</option>
+          <option value="cricket">cricket shoes</option>
+        </select>
+      
+      </div>
+
+
+
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+      <label for="file">Upload Image</label>
+      <input formControlName="file" type="file" class="form-control" (change)="onFileChange($event)" ngModel>
+      
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+  </div>
+  

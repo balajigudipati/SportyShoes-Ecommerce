@@ -1,0 +1,56 @@
+
+
+<div class="container">
+    <ng-container  *ngIf=" isLoggedIn()">
+    <p>payment works!</p>
+    <form class="mt-4"  [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+          <input type="text" id="cardHolderName" class="form-control form-control-lg" siez="17"
+            placeholder="Cardholder's Name"  formControlName="cardHolderName"   name="cardHolderName" >
+          <label class="form-label" for="cardHolderName">Cardholder's Name</label>
+        </div>
+
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+          <input type="text" id="cardNumber" class="form-control form-control-lg" siez="17"
+            placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" formControlName="cardNumber"   name="cardNumber" >
+          <label class="form-label" for="cardNumber">Card Number</label>
+        </div>
+
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+            
+              <input type="text" id="cardExpir" class="form-control form-control-lg"
+                placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7"  formControlName="cardExpir"  name="cardExpir" >
+              <label class="form-label" for="cardExpir">Expiration</label>
+            
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+            
+              <input type="password" id="cvv" class="form-control form-control-lg"
+                placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3"  formControlName="cvv" name="cvv" >
+              <label class="form-label" for="cvv">Cvv</label>
+            
+          </div>
+        </div>
+    
+        <button type="submit" class="btn btn-info btn-block btn-lg">
+            <div class="d-flex justify-content-between">
+              <span> <strong>Grand Total : ${{grandTotal}}</strong></span>&nbsp;
+              <span>proceed<i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+            </div>
+          </button>
+
+
+      </form>
+
+</ng-container>
+</div>
+
+
+
+<ng-container  *ngIf="! isLoggedIn()">
+    <p>payment works! Please login to proceed further</p>
+</ng-container>
+
+
+

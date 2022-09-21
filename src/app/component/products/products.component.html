@@ -1,0 +1,107 @@
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="filter('')">
+                <img src="./assets/img/allproduct.webp" alt="">
+                <h6>All Shoes</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('running shoes')">
+                <img style="width: 62px; margin-top: 5px;" src="./assets/img/running.jpg" alt="">
+                <h6>Running shoes</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('training shoes')">
+                <img style="width: 62px; margin-top: 5px;" src="./assets/img/gym&Training.jpg" alt="">
+                <h6>Training Shoes</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('football shoes')">
+                <img style="width: 62px; margin-top: 5px;" src="./assets/img/football.jpg" alt="">
+                <h6>Football Shoes</h6>
+            </a>
+        </div>
+
+
+        <div class="item">
+            <a (click)="filter('trekking&hiking')">
+                <img style="width: 62px; margin-top: 5px;" src="./assets/img/treking&Hiking.jpg" alt="">
+                <h6>Trekking&Hiking</h6>
+            </a>
+        </div>
+
+        <div class="item">
+            <a (click)="filter('walking shoes')">
+                <img style="width: 62px; margin-top: 5px;" src="./assets/img/walking.jpg" alt="">
+                <h6>Walking Shoes</h6>
+            </a>
+        </div>
+
+        <div class="item">
+            <a (click)="filter('sneakers')">
+                <img style="width: 62px; margin-top: 5px;" src="./assets/img/sneakers.jpg" alt="">
+                <h6>Sneakers</h6>
+            </a>
+        </div>
+
+        <div class="item">
+            <a (click)="filter('outdoor')">
+                <img style="width: 62px; margin-top: 5px;" src="./assets/img/outdoor.jpg" alt="">
+                <h6>outdoor</h6>
+            </a>
+        </div>
+
+        <div class="item">
+            <a (click)="filter('skateboarding')">
+                <img style="width: 62px; margin-top: 5px;" src="./assets/img/skateboarding.jpg" alt="">
+                <h6>skateboarding</h6>
+            </a>
+        </div>
+
+        <div class="item">
+            <a (click)="filter('cricket')">
+                <img style="width: 62px; margin-top: 5px;" src="./assets/img/cricket.webp" alt="">
+                <h6>Cricket Shoes</h6>
+            </a>
+        </div>
+
+        <div class="item">
+            <a (click)="filter('tennis')">
+                <img style="width: 62px; margin-top: 5px;" src="./assets/img/tennnis.webp" alt="">
+                <h6>Tennis Shoes</h6>
+            </a>
+        </div>
+
+        <div class="item">
+            <a (click)="filter('basketball')">
+                <img style="width: 62px; margin-top: 5px;" src="./assets/img/basketball.webp" alt="">
+                <h6>Basketball Shoes</h6>
+            </a>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+
+<!--All Products Starts here-->
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'productName'">
+            <div class="card col-md-3">
+                <img src="data:image/jpeg;base64,{{item.picByte}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.productName}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.productDescription}}</p>
+                <p><strong>Price:</strong> ${{item.productPrice}}</p>
+                <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
